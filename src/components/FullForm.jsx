@@ -31,24 +31,28 @@ export default function FullForm({type, setResultado, setWeight, weight}) {
     }
 
     function calcular() {
+        var resultado;
         if(type=='BF') {
             if(gender==0) {
-                setResultado(calcularBFM());
+                resultado = (calcularBFM());
             } else {
-                setResultado(calcularBFF());
+                resultado = (calcularBFF());
             }
         } else {
             if(gender==0) {
-                setResultado(calcularTMBM());
+                resultado = (calcularTMBM());
             } else {
-                setResultado(calcularTMBF());
+                resultado = (calcularTMBF());
             }
         }
+        console.log(resultado);
+        if(!isNaN(resultado))
+            setResultado(resultado)
     }
 
 
     return (
-        <div className="w-[400px] text-xl">
+        <form className="w-[400px] h-fit text-xl">
             <div>
                 <span className='flex justify-between'>
                     <p>Masculino</p>
@@ -101,8 +105,11 @@ export default function FullForm({type, setResultado, setWeight, weight}) {
                 :
                 <></>
             }
-            <button onClick={calcular} className="w-full bg-navy border-yellow border-4 button-hover pt-2 py-2" type="button">CALCULAR</button>
+            <button 
+            onClick={calcular}
+            className={gender==0?"w-[400px] h-fit text-xl bg-gradient-to-bl from-[#1e81b0]/20 to-black mt-6 bg-navy border-yellow hover:bg-yellow hover:font-black hover:text-[#fff] border-4 button-hover pt-2 py-2":"w-[400px] h-fit text-xl bg-gradient-to-bl from-[#DA7187]/20 to-black mt-6 bg-navy border-yellow hover:bg-yellow hover:font-black hover:text-[#fff] border-4 button-hover pt-2 py-2"}
+            type="button">CALCULAR</button>
 
-        </div>
+        </form>
     )
 }

@@ -57,7 +57,7 @@ export default function FormOutcome({ type }) {
                                 <p className='px-6 py-2  text-center bg-navy'>{(resultado).toFixed(2)}%</p>
                             </div>
                             <div className='space-y-1'>
-                                <p className=' font-bold'>Massa magra</p>
+                                <p className='font-bold'>Massa magra</p>
                                 <div className='space-y-1'>
                                     <p>Refere-se a musculos e ossos:</p>
                                     <p className='px-6 py-2  text-center bg-navy'>{((1-(resultado / 100)) * weight).toFixed(2)} kg</p>
