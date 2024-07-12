@@ -65,7 +65,7 @@ export default function FormOutcome({ type }) {
                                 <p className=' font-bold'>Massa gorda</p>
                                 <div className='space-y-1'>
                                     <p>Refere-se a gordura</p>
-                                    <p className='px-6 py-2 text-center bg-navy'>{(((resultado / 100)) * weight).toFixed(2)} kg</p>
+                                    <p className='px-6 py-2 text-center bg-navy'>{((resultado / 100) * weight).toFixed(2)} kg</p>
                                 </div>
 
                             </div>
